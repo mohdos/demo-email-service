@@ -7,7 +7,6 @@ import morgan from '../utils/morgan';
 import ErrorHandler from '../middlewares/errorHandler';
 
 import { router } from '../routes';
-import { connectToDB } from '../database/connection';
 
 /**
  * Express instance
@@ -15,7 +14,6 @@ import { connectToDB } from '../database/connection';
  */
 const app = express();
 
-connectToDB();
 
 // log all requests
 app.use(morgan);
