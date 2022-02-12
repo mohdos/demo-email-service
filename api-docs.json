@@ -1,0 +1,118 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Demo email service API Docs",
+        "description": "Backend APIs for the email service",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:4000/email-service/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Email",
+            "description": "Backend APIs for the email service"
+        }
+    ],
+    "paths": {
+        "/emails/send-email": {
+            "post": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Sends an email",
+                "requestBody": {
+                    "description": "Send email",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "recipients": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "email",
+                                            "example": "test@example.com"
+                                        }
+                                    },
+                                    "subject": {
+                                        "type": "string",
+                                        "description": "Email subject"
+                                    },
+                                    "text": {
+                                        "type": "string",
+                                        "description": "Body text"
+                                    },
+                                    "html": {
+                                        "type": "string",
+                                        "description": "Body html"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully sent email",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "responseCode": {
+                                            "type": "string",
+                                            "example": "SUCCESS"
+                                        },
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error sending email",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "responseCode": {
+                                            "type": "string",
+                                            "example": "SUCCESS"
+                                        },
+                                        "code": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

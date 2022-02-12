@@ -21,7 +21,6 @@ const joiValidator = (schema: joi.ObjectSchema<any>) => {
         if (valid) {
             next();
         } else {
-            console.log(error);
             const { details } = error;
             const message = details.map(i => i.message.replace(/"/g, "'")).join(',');
     

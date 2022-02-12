@@ -7,6 +7,7 @@ import morgan from '../utils/morgan';
 import ErrorHandler from '../middlewares/errorHandler';
 
 import { router } from '../routes';
+import { setupSwagger } from './swagger';
 
 /**
  * Express instance
@@ -35,6 +36,7 @@ app.use(
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
+setupSwagger(app);
 
 // mount api routes
 app.use('/email-service', router);

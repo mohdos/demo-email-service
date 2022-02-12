@@ -8,8 +8,18 @@ export class MailjetService extends BaseEmailService {
     mailjet: nodeMailjet.Email.Client;
     constructor() {
         super();
-        this.mailjet = nodeMailjet.connect(vars.emailServices.mailjet.apiKey, vars.emailServices.mailjet.apiSecret);
+        this.mailjet = nodeMailjet.connect(vars.emailServices.mailjet.apiKey, vars.emailServices.mailjet.apiSecret); // initializing mailjet
     }
+
+    /**
+     * Mailjet Send email method
+     * @param __namedParameters.subject email subject
+     * @param __namedParameters.text email body text
+     * @param __namedParameters.html email body html
+     * @param __namedParameters.recipients array of emails of the recipients
+     * 
+     * @returns result of sending the email
+     */
     public sendEmail({subject = "", text = undefined, html = undefined, recipients}: {subject: string, text?: string, html?: string, recipients: string[]}): Promise<any> {
           const textHtml = {
               ...(html ? {HTMLPart: html} : {TextPart: text || ""})

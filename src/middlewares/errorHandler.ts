@@ -13,7 +13,6 @@ const { VALIDATION_ERROR } = errorManager;
 export default class ErrorHandler {
   static notFound(req: any, res: any) {
     const errorName = 'API_NOT_FOUND';
-    console.log(errorName);
     const response = new CustomResponse(res);
     return response.error({ ...errorManager.NOT_FOUND }).send();
   }
@@ -26,7 +25,6 @@ export default class ErrorHandler {
     // eslint-disable-next-line no-unused-vars
     next?: express.NextFunction,
   ): any {
-    console.log("ERROR")
     if (res)
     {
         const response = new CustomResponse(res);
