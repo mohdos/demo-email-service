@@ -37,7 +37,7 @@ app.use(cors());
 
 
 // mount api routes
-app.use('/api', router);
+app.use('/email-service', router);
 
 // if error is not an instanceOf CustomError, convert it.
 app.use(ErrorHandler.handle);
