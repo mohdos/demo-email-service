@@ -1,6 +1,4 @@
 
-import * as process from 'process';
-
 import 'jasmine';
 import { emailServicesList, SendGridService } from '../../email-services';
 import { EmailService } from '../../services';
@@ -59,7 +57,5 @@ describe('Testing email services with fallback', () => {
             fail('Email services did not fallback');
         }
     });
-    
-
 })
 
