@@ -18,11 +18,15 @@ export const vars = {
    */
   port: parseInt(process.env.PORT || '3000'),
 
-  postgres: {
-    host: process.env.PG_HOST,
-    port: +(process.env.PG_PORT || 5432),
-    db: process.env.PG_DB,
-    username: process.env.PG_USERNAME,
-    password: process.env.PG_PASS,
-  },
+  emailServices: {
+    fromEmail: String(process.env.FROM_EMAIL || ""),
+    fromName: String(process.env.FROM_NAME || ""),
+    sendGrid: {
+      apiKey: String(process.env.SENDGRID_KEY || "")
+    },
+    mailjet: {
+      apiKey: String(process.env.MAILJET_KEY || ""),
+      apiSecret: String(process.env.MAILJET_SECRET || "")
+    }
+  }
 };

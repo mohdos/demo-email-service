@@ -9,7 +9,7 @@ export default class CustomError extends Error {
     message: string;
   
     constructor({
-      message, responseCode = errorManager.UNKNOWN_ERROR.responseCode, code = 500,
+      message, responseCode = errorManager.INTERNAL_SERVER_ERROR.responseCode, code = 500,
     }) {
       super(message);
       this.responseCode = responseCode;

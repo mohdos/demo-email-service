@@ -16,7 +16,7 @@ import CustomError from '../utils/customError';
 const joiValidator = (schema: joi.ObjectSchema<any>) => {
   return (req, res, next) => {
     try {
-        const { error } = schema.validate(req, {abortEarly: true});
+        const { error } = schema.validate(req, {abortEarly: false});
         const valid = error == null;
         if (valid) {
             next();

@@ -19,8 +19,8 @@ class CustomResponse {
   error(options: {code?: number, message?: string, responseCode?: string} = {})
   {
     this.code = options.code || 500;
-    this.responseCode = options.responseCode || errorManager.UNKNOWN_ERROR.responseCode;
-    this.message = options.message || errorManager.UNKNOWN_ERROR.message;
+    this.responseCode = options.responseCode || errorManager.INTERNAL_SERVER_ERROR.responseCode;
+    this.message = options.message || errorManager.INTERNAL_SERVER_ERROR.message;
     return this;
   }
 

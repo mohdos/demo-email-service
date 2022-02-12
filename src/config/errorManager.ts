@@ -20,8 +20,8 @@ export const errorManager = {
     message: 'API not found',
     code: 400,
   },
-  UNKNOWN_ERROR: {
-    responseCode: 'UNKNOWN_ERROR',
+  INTERNAL_SERVER_ERROR: {
+    responseCode: 'INTERNAL_SERVER_ERROR',
     message: 'Unknown error occured',
     code: 500,
   }
